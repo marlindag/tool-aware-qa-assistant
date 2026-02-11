@@ -1,4 +1,4 @@
-Prompt eng take-home assignment
+Tool-Aware QA Assistant (Take-Home)
 
 Overview
 
@@ -36,7 +36,7 @@ Tooling
 
 The assistant has access to a single tool: search_wikipedia(query).
 
-Tool calls are limited per request. Retrieved sources are captured by the application layer and are not displayed in the assistant’s response.
+Tool calls are limited to at most one per request. Retrieved sources are captured by the application layer and are not displayed in the assistant’s response.
 
 Evaluation
 
@@ -50,20 +50,20 @@ Each eval case specifies:
 
 Results Summary
 
-9 out of 10 evaluation cases pass.
+10 out of 10 evaluation cases pass.
 
 The passing cases demonstrate that the assistant:
 - Avoids searching for common knowledge
-- Uses Wikipedia appropriately for precise factual queries
+- Uses Wikipedia for precise factual queries that require verification
 - Handles fictional entities without treating them as real
-- Asks clarifying questions before answering ambiguous prompts
+- Asks a single clarifying question before answering ambiguous prompts
 - Produces concise answers without narrating tool usage
 
 Known Limitation
 
-For the query “How tall is Mount Kilimanjaro?”, the assistant makes two Wikipedia search calls instead of one.
+Tool-use is intentionally constrained to a maximum of one Wikipedia search call per question to keep behavior deterministic and easy to evaluate.
 
-The final answer is correct, but the evaluation enforces a strict maximum of one tool call for single-entity factual queries, causing this case to fail.
+In production, a second retrieval can sometimes improve answer quality when the first result is incomplete or off-target. This implementation prioritizes predictable tool discipline over recovery behavior, which is an explicit tradeoff.
 
 How to Run
 
