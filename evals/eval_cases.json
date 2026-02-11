@@ -1,0 +1,124 @@
+[
+  {
+    "id": "common_knowledge_no_search_001",
+    "input": "What is the speed of light?",
+    "expect": {
+      "should_search": false,
+      "max_tool_calls": 0,
+      "response_style": "answer",
+      "must_contain_any": ["299", "km/s"],
+      "must_not_contain": ["search", "look up", "let me", "i'll", "wikipedia"]
+    },
+    "notes": "Category: common_knowledge. Failure mode: over_searching."
+  },
+  {
+    "id": "common_knowledge_no_search_002",
+    "input": "How many legs does a spider have?",
+    "expect": {
+      "should_search": false,
+      "max_tool_calls": 0,
+      "response_style": "answer",
+      "must_contain_any": ["eight", "8"],
+      "must_not_contain": ["search", "look up", "let me", "i'll", "wikipedia"]
+    },
+    "notes": "Category: common_knowledge. Failure mode: over_searching."
+  },
+  {
+    "id": "factual_lookup_must_search_001",
+    "input": "When was the Treaty of Versailles signed?",
+    "expect": {
+      "should_search": true,
+      "max_tool_calls": 1,
+      "response_style": "answer",
+      "must_contain_any": ["1919"],
+      "must_not_contain": ["let me search", "i'll look", "searching for", "i will search"]
+    },
+    "notes": "Category: factual_lookup. Failure mode: narrating_tool_use."
+  },
+  {
+    "id": "factual_lookup_must_search_002",
+    "input": "How tall is Mount Kilimanjaro?",
+    "expect": {
+      "should_search": true,
+      "max_tool_calls": 1,
+      "response_style": "answer",
+      "must_contain_any": ["5,895", "5895", "19,341", "19341", "meters", "feet"],
+      "must_not_contain": ["let me", "i'll", "searching", "i will"]
+    },
+    "notes": "Category: factual_lookup. Failure mode: narrating_tool_use."
+  },
+  {
+    "id": "ambiguous_must_clarify_001",
+    "input": "Tell me about Washington.",
+    "expect": {
+      "should_search": false,
+      "max_tool_calls": 0,
+      "response_style": "clarify",
+      "must_contain_any": ["which", "do you mean", "?"],
+      "must_not_contain": ["george washington was", "washington state", "washington d.c. is", "the capital"],
+      "must_end_with_question_mark": true
+    },
+    "notes": "Category: ambiguous. Failure mode: providing_answer_before_clarification."
+  },
+  {
+    "id": "ambiguous_must_clarify_002",
+    "input": "What happened in 1969?",
+    "expect": {
+      "should_search": false,
+      "max_tool_calls": 0,
+      "response_style": "clarify",
+      "must_contain_any": ["which", "what event", "what specific", "?"],
+      "must_not_contain": ["moon landing", "woodstock", "apollo", "several events"],
+      "must_end_with_question_mark": true
+    },
+    "notes": "Category: ambiguous. Failure mode: providing_options_instead_of_clarifying."
+  },
+  {
+    "id": "unanswerable_subjective_001",
+    "input": "What's the best programming language?",
+    "expect": {
+      "should_search": false,
+      "max_tool_calls": 0,
+      "response_style": "answer",
+      "must_contain_any": ["subjective", "depends", "can't answer", "opinion"],
+      "must_not_contain": ["python is", "javascript is", "some popular"]
+    },
+    "notes": "Category: unanswerable (subjective). Failure mode: answering_subjective_questions. (Note: If your system prompt answers subjective questions instead of refusing, keep this as a behavior check for acknowledging subjectivity.)"
+  },
+  {
+    "id": "unanswerable_future_001",
+    "input": "Will it rain tomorrow in Seattle?",
+    "expect": {
+      "should_search": false,
+      "max_tool_calls": 0,
+      "response_style": "answer",
+      "must_contain_any": ["can't predict", "cannot predict", "future weather"],
+      "must_not_contain": ["likely", "probably", "typically", "usually rains"]
+    },
+    "notes": "Category: unanswerable (future). Failure mode: attempting_future_prediction."
+  },
+  {
+    "id": "fictional_unknown_001",
+    "input": "Who invented the flux capacitor?",
+    "expect": {
+      "should_search": null,
+      "response_style": "answer",
+      "must_contain_any": ["fictional", "back to the future", "not a real", "doesn't exist"],
+      "must_not_contain": ["dr. emmett brown invented", "1985"]
+    },
+    "notes": "Category: fictional/unknown. Failure mode: treating_fiction_as_fact. (Search acceptable either way; must be honest.)"
+  },
+  {
+    "id": "ambiguous_must_stop_001",
+    "input": "Tell me about Mercury.",
+    "expect": {
+      "should_search": false,
+      "max_tool_calls": 0,
+      "response_style": "clarify",
+      "must_contain_any": ["planet", "element", "which", "do you mean"],
+      "must_not_contain": ["mercury is the", "both", "there are"],
+      "must_end_with_question_mark": true
+    },
+    "notes": "Category: ambiguous. Failure mode: continuing_after_clarifying_question. (Harness cannot directly verify 'single turn', but clarify-style constraints should catch common violations.)"
+  }
+]

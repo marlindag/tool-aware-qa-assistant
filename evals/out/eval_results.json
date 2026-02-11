@@ -1,0 +1,104 @@
+{
+  "model": "claude-sonnet-4-5-20250929",
+  "passed": 10,
+  "failed": 0,
+  "total": 10,
+  "results": [
+    {
+      "id": "common_knowledge_no_search_001",
+      "passed": true,
+      "tool_used": false,
+      "tool_call_count": 0,
+      "sources": [],
+      "failures": [],
+      "assistant_text": "The speed of light in a vacuum is approximately 299,792,458 meters per second (about 300,000 km/s or 186,000 miles per second). This is a fundamental physical constant denoted by the letter \"c\"."
+    },
+    {
+      "id": "common_knowledge_no_search_002",
+      "passed": true,
+      "tool_used": false,
+      "tool_call_count": 0,
+      "sources": [],
+      "failures": [],
+      "assistant_text": "Spiders have eight legs."
+    },
+    {
+      "id": "factual_lookup_must_search_001",
+      "passed": true,
+      "tool_used": true,
+      "tool_call_count": 1,
+      "sources": [
+        "Treaty of Versailles",
+        "Treaty of Paris (1783)"
+      ],
+      "failures": [],
+      "assistant_text": "The Treaty of Versailles was signed on June 28, 1919."
+    },
+    {
+      "id": "factual_lookup_must_search_002",
+      "passed": true,
+      "tool_used": true,
+      "tool_call_count": 1,
+      "sources": [
+        "Mount Kilimanjaro",
+        "Mount Meru (Tanzania)"
+      ],
+      "failures": [],
+      "assistant_text": "Mount Kilimanjaro is 5,895 meters (19,341 feet) tall, making it the highest mountain in Africa."
+    },
+    {
+      "id": "ambiguous_must_clarify_001",
+      "passed": true,
+      "tool_used": false,
+      "tool_call_count": 0,
+      "sources": [],
+      "failures": [],
+      "assistant_text": "Do you mean Washington the state or Washington, D.C.?"
+    },
+    {
+      "id": "ambiguous_must_clarify_002",
+      "passed": true,
+      "tool_used": false,
+      "tool_call_count": 0,
+      "sources": [],
+      "failures": [],
+      "assistant_text": "Your question is very broad. Are you asking about a specific event, category (such as politics, science, or culture), or region in 1969?"
+    },
+    {
+      "id": "unanswerable_subjective_001",
+      "passed": true,
+      "tool_used": false,
+      "tool_call_count": 0,
+      "sources": [],
+      "failures": [],
+      "assistant_text": "I can't answer that because it's subjective and depends on individual needs and preferences."
+    },
+    {
+      "id": "unanswerable_future_001",
+      "passed": true,
+      "tool_used": false,
+      "tool_call_count": 0,
+      "sources": [],
+      "failures": [],
+      "assistant_text": "I can't predict future weather."
+    },
+    {
+      "id": "fictional_unknown_001",
+      "passed": true,
+      "tool_used": false,
+      "tool_call_count": 0,
+      "sources": [],
+      "failures": [],
+      "assistant_text": "The flux capacitor is a fictional device from the \"Back to the Future\" film series, invented by the character Dr. Emmett \"Doc\" Brown, portrayed by Christopher Lloyd. In the movie's storyline, Doc Brown conceived the idea for the flux capacitor on November 5, 1955, after slipping and hitting his head while hanging a clock in his bathroom."
+    },
+    {
+      "id": "ambiguous_must_stop_001",
+      "passed": true,
+      "tool_used": false,
+      "tool_call_count": 0,
+      "sources": [],
+      "failures": [],
+      "assistant_text": "Do you mean Mercury the planet or Mercury the chemical element?"
+    }
+  ]
+}
