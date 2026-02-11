@@ -70,10 +70,26 @@ How to Run
 1. Set your Anthropic API key:
    ANTHROPIC_API_KEY=your_key_here
 
-2. Run the evaluation suite:
+2. Run the CLI:
+   python cli.py "How many legs does a spider have?"
+
+3. Run the evaluation suite:
    python evals/run_evals.py
 
-3. Results are written to:
-   evals/out/eval_results.json
+Notes:
+- The CLI prints `Tool used: True/False (N call(s))` to indicate whether Wikipedia search was invoked.
 
-   The CLI prints Tool used: True/False (N call(s)) to indicate whether Wikipedia search was invoked
+
+## Sample queries
+
+Common knowledge (no search):
+- `python3 cli.py "How many legs does a spider have?"`
+- `python3 cli.py "What is the speed of light?"`
+
+Factual lookup (uses Wikipedia):
+- `python3 cli.py "When was the Treaty of Versailles signed?"`
+- `python3 cli.py "How tall is Mount Kilimanjaro?"`
+
+Ambiguous (asks one clarifying question):
+- `python3 cli.py "Tell me about Mercury."`
+- `python3 cli.py "Tell me about Washington."`
