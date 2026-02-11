@@ -11,7 +11,7 @@
       "tool_call_count": 0,
       "sources": [],
       "failures": [],
-      "assistant_text": "The speed of light in a vacuum is approximately 299,792,458 meters per second (about 300,000 km/s or 186,000 miles per second). This is a fundamental physical constant denoted by the letter \"c\"."
+      "assistant_text": "The speed of light in a vacuum is approximately 299,792,458 meters per second (about 300,000 kilometers per second or 186,282 miles per second). This is a fundamental physical constant, often denoted by the letter \"c.\""
     },
     {
       "id": "common_knowledge_no_search_002",
@@ -44,7 +44,7 @@
         "Mount Meru (Tanzania)"
       ],
       "failures": [],
-      "assistant_text": "Mount Kilimanjaro is 5,895 meters (19,341 feet) tall, making it the highest mountain in Africa."
+      "assistant_text": "Mount Kilimanjaro stands at 5,895 meters (19,341 feet) above sea level, making it the highest mountain in Africa and the highest free-standing mountain in the world."
     },
     {
       "id": "ambiguous_must_clarify_001",
@@ -62,7 +62,7 @@
       "tool_call_count": 0,
       "sources": [],
       "failures": [],
-      "assistant_text": "Your question is very broad. Are you asking about a specific event, category (such as politics, science, or culture), or region in 1969?"
+      "assistant_text": "Your question is very broad\u20141969 saw many significant events across different domains. Could you clarify what type of event or topic you're interested in, such as space exploration, politics, culture, or a specific country or region?"
     },
     {
       "id": "unanswerable_subjective_001",
@@ -71,7 +71,7 @@
       "tool_call_count": 0,
       "sources": [],
       "failures": [],
-      "assistant_text": "I can't answer that because it's subjective and depends on individual needs and preferences."
+      "assistant_text": "I can't answer that because it's subjective and depends on personal preferences and specific use cases."
     },
     {
       "id": "unanswerable_future_001",
@@ -89,7 +89,7 @@
       "tool_call_count": 0,
       "sources": [],
       "failures": [],
-      "assistant_text": "The flux capacitor is a fictional device from the \"Back to the Future\" film series, invented by the character Dr. Emmett \"Doc\" Brown, portrayed by Christopher Lloyd. In the movie's storyline, Doc Brown conceived the idea for the flux capacitor on November 5, 1955, after slipping and hitting his head while hanging a clock in his bathroom."
+      "assistant_text": "The flux capacitor is a fictional device from the \"Back to the Future\" film series, invented by the character Dr. Emmett \"Doc\" Brown, portrayed by Christopher Lloyd. In the movie's storyline, Doc Brown conceived the idea on November 5, 1955, after slipping and hitting his head while hanging a clock in his bathroom."
     },
     {
       "id": "ambiguous_must_stop_001",

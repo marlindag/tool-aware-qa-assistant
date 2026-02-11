@@ -75,3 +75,5 @@ How to Run
 
 3. Results are written to:
    evals/out/eval_results.json
+
+   The CLI prints Tool used: True/False (N call(s)) to indicate whether Wikipedia search was invoked
